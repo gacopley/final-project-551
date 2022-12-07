@@ -15,47 +15,47 @@ wealth = ({'Under 100%': 1, '200%': 2, '300%': 3, '400%+': 4})
 def predict(data_type, sex_type, wealth_type, normal_type, over_type, obese_type):
 
     if (data_type == 'GENERAL' and sex_type == 'GENERAL'):
-        data = [['N', normal_type], ['Ov', over_type], ['Ob', obese_type]]
+        data = [{'N': normal_type}, {'Ov': over_type}, {'Ob': obese_type}]
     if (data_type == 'GENERAL' and sex_type == 'MALE'):
-        data = [['NM', normal_type], ['OvM', over_type], ['ObM', obese_type]]
+        data = [{'NM': normal_type}, {'OvM': over_type}, {'ObM': obese_type}]
     if (data_type == 'GENERAL' and sex_type == 'FEMALE'):
-        data = [['NF', normal_type], ['OvF', over_type], ['ObF', obese_type]]
+        data = [{'NF': normal_type}, {'OvF': over_type}, {'ObF': obese_type}]
     if (data_type == 'WHITE' and sex_type == 'GENERAL'):
-        data = [['NW', normal_type], ['OvW', over_type], ['ObW', obese_type]]
+        data = [{'NW': normal_type}, {'OvW': over_type}, {'ObW': obese_type}]
     if (data_type == 'WHITE' and sex_type == 'MALE'):
-        data = [['NWM', normal_type], [
-            'OvWM', over_type], ['ObWM', obese_type]]
+        data = [{'NWM': normal_type}, {
+            'OvWM': over_type}, {'ObWM': obese_type}]
     if (data_type == 'WHITE' and sex_type == 'FEMALE'):
-        data = [['NWF', normal_type], [
-            'OvWF', over_type], ['ObWF', obese_type]]
+        data = [{'NWF': normal_type}, {
+            'OvWF': over_type}, {'ObWF': obese_type}]
     if (data_type == 'BLACK' and sex_type == 'GENERAL'):
-        data = [['NB', normal_type], ['OvB', over_type], ['ObB', obese_type]]
+        data = [{'NB': normal_type}, {'OvB': over_type}, {'ObB': obese_type}]
     if (data_type == 'BLACK' and sex_type == 'MALE'):
-        data = [['NBM', normal_type], [
-            'OvBM', over_type], ['ObBM', obese_type]]
+        data = [{'NBM': normal_type}, {
+            'OvBM': over_type}, {'ObBM': obese_type}]
     if (data_type == 'BLACK' and sex_type == 'FEMALE'):
-        data = [['NBF', normal_type], [
-            'OvBF', over_type], ['ObBF', obese_type]]
+        data = [{'NBF': normal_type}, {
+            'OvBF': over_type}, {'ObBF': obese_type}]
     if (data_type == 'HISPANIC' and sex_type == 'GENERAL'):
-        data = [['NH', normal_type], ['OvH', over_type], ['ObH', obese_type]]
+        data = [{'NH': normal_type}, {'OvH': over_type}, {'ObH': obese_type}]
     if (data_type == 'HISPANIC' and sex_type == 'MALE'):
-        data = [['NHM', normal_type], [
-            'OvHM', over_type], ['ObHM', obese_type]]
+        data = [{'NHM': normal_type}, {
+            'OvHM': over_type}, {'ObHM': obese_type}]
     if (data_type == 'HISPANIC' and sex_type == 'FEMALE'):
-        data = [['NHF', normal_type], [
-            'OvHF', over_type], ['ObHF', obese_type]]
+        data = [{'NHF': normal_type}, {
+            'OvHF': over_type}, {'ObHF': obese_type}]
     if (data_type == 'WEALTH' and wealth_type == 'Under 100%'):
-        data = [['N100', normal_type], [
-            'Ov100', over_type], ['Ob100', obese_type]]
+        data = [{'N100': normal_type}, {
+            'Ov100': over_type}, {'Ob100': obese_type}]
     if (data_type == 'WEALTH' and wealth_type == '200%'):
-        data = [['N200', normal_type], [
-            'Ov200', over_type], ['Ob200', obese_type]]
+        data = [{'N200': normal_type}, {
+            'Ov200': over_type}, {'Ob200': obese_type}]
     if (data_type == 'WEALTH' and wealth_type == '300%'):
-        data = [['N300', normal_type], [
-            'Ov300', over_type], ['Ob300', obese_type]]
+        data = [{'N300': normal_type}, {
+            'Ov300': over_type}, {'Ob300': obese_type}]
     if (data_type == 'WEALTH' and wealth_type == '400%+'):
-        data = [['N400', normal_type], [
-            'Ov400', over_type], ['Ob400', obese_type]]
+        data = [{'N400': normal_type}, {
+            'Ov400': over_type}, {'Ob400': obese_type}]
     df = pd.DataFrame([data])
 
     return model.predict(df)
