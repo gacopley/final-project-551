@@ -63,9 +63,10 @@ def predict(data_type, sex_type, wealth_type, normal_type, over_type, obese_type
         data = [['N400', normal_type], [
             'Ov400', over_type], ['Ob400', obese_type]]
     print(data_type, sex_type, wealth_type)
-    df = pd.DataFrame([data])
+    #df = pd.DataFrame([data])
 
-    return model.predict(df)
+    # return model.predict(df)
+    return 1
 
 
 st.title('Obesity Rate Predictor')
