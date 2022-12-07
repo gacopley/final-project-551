@@ -66,7 +66,7 @@ def predict(data_type, sex_type, wealth_type, normal_type, over_type, obese_type
     #df = pd.DataFrame([data])
 
     # return model.predict(df)
-    return 1
+    return data_type
 
 
 st.title('Obesity Rate Predictor')
