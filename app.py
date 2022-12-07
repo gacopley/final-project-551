@@ -16,7 +16,12 @@ def predict(data_type, sex_type, wealth_type, normal_type, over_type, obese_type
 
     data = []
     if (data_type == 1 and sex_type == 1):
-        data = [['N', normal_type], ['Ov', over_type], ['Ob', obese_type]]
+        data = [['N', normal_type], ['Ov', over_type], ['Ob', obese_type], ['NM', None], [
+            'OvM', None], ['ObM', None], ['NF', None], ['OvF', None], ['ObF', None], ['NW', None], ['OvW', None], ['ObW', None], ['NWM', None], [
+            'OvWM', None], ['ObWM', None], ['NWF', None], ['OvWF', None], ['ObWF', None], ['NB', None], ['OvB', None], ['ObB', None], ['NBM', None], [
+            'OvBM', None], ['ObBM', None], ['NBF', None], ['OvBF', None], ['ObBF', None], ['NH', None], ['OvH', None], ['ObH', None], ['NHM', None], [
+            'OvHM', None], ['ObHM', None], ['NHF', None], ['OvHF', None], ['ObHF', None], ['N100', None], ['Ov100', None], ['Ob100', None], ['N200', None], [
+            'Ov200', None], ['Ob200', None], ['N300', None], ['Ov300', None], ['Ob300', None], ['N400', None], ['Ov400', None], ['Ob400', None]]
     if (data_type == 1 and sex_type == 2):
         data = [['NM', normal_type], ['OvM', over_type], ['ObM', obese_type]]
     if (data_type == 1 and sex_type == 3):
