@@ -14,7 +14,6 @@ wealth = ({'Under 100%': 1, '200%': 2, '300%': 3, '400%+': 4})
 @st.cache
 def predict(data_type, sex_type, wealth_type, normal_type, over_type, obese_type):
 
-    data = []
     if (types[data_type] == 1 and sex[sex_type] == 1):
         data = [['N', normal_type], ['Ov', over_type], ['Ob', obese_type]]
     if (types[data_type] == 1 and sex[sex_type] == 2):
