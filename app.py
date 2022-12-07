@@ -62,7 +62,7 @@ def predict(data_type, sex_type, wealth_type, normal_type, over_type, obese_type
     if (data_type == 5 and wealth_type == 4):
         data = [['N400', normal_type], [
             'Ov400', over_type], ['Ob400', obese_type]]
-
+    print(data_type, sex_type, wealth_type)
     df = pd.DataFrame([data])
 
     return model.predict(df)
