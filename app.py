@@ -15,58 +15,51 @@ wealth = ({'Under 100%': 1, '200%': 2, '300%': 3, '400%+': 4})
 def predict(data_type, sex_type, wealth_type, normal_type, over_type, obese_type):
 
     data = []
-    if (data_type == 1 and sex_type == 1):
-        data = [['N', normal_type], ['Ov', over_type], ['Ob', obese_type], ['NM', None], [
-            'OvM', None], ['ObM', None], ['NF', None], ['OvF', None], ['ObF', None], ['NW', None], ['OvW', None], ['ObW', None], ['NWM', None], [
-            'OvWM', None], ['ObWM', None], ['NWF', None], ['OvWF', None], ['ObWF', None], ['NB', None], ['OvB', None], ['ObB', None], ['NBM', None], [
-            'OvBM', None], ['ObBM', None], ['NBF', None], ['OvBF', None], ['ObBF', None], ['NH', None], ['OvH', None], ['ObH', None], ['NHM', None], [
-            'OvHM', None], ['ObHM', None], ['NHF', None], ['OvHF', None], ['ObHF', None], ['N100', None], ['Ov100', None], ['Ob100', None], ['N200', None], [
-            'Ov200', None], ['Ob200', None], ['N300', None], ['Ov300', None], ['Ob300', None], ['N400', None], ['Ov400', None], ['Ob400', None]]
-    if (data_type == 1 and sex_type == 2):
+    if (types[data_type] == 1 and sex[sex_type] == 1):
+        data = [['N', normal_type], ['Ov', over_type], ['Ob', obese_type]]
+    if (types[data_type] == 1 and sex[sex_type] == 2):
         data = [['NM', normal_type], ['OvM', over_type], ['ObM', obese_type]]
-    if (data_type == 1 and sex_type == 3):
+    if (types[data_type] == 1 and sex[sex_type] == 3):
         data = [['NF', normal_type], ['OvF', over_type], ['ObF', obese_type]]
-    if (data_type == 2 and sex_type == 1):
+    if (types[data_type] == 2 and sex[sex_type] == 1):
         data = [['NW', normal_type], ['OvW', over_type], ['ObW', obese_type]]
-    if (data_type == 2 and sex_type == 2):
+    if (types[data_type] == 2 and sex[sex_type] == 2):
         data = [['NWM', normal_type], [
             'OvWM', over_type], ['ObWM', obese_type]]
-    if (data_type == 2 and sex_type == 3):
+    if (types[data_type] == 2 and sex[sex_type] == 3):
         data = [['NWF', normal_type], [
             'OvWF', over_type], ['ObWF', obese_type]]
-    if (data_type == 3 and sex_type == 1):
+    if (types[data_type] == 3 and sex[sex_type] == 1):
         data = [['NB', normal_type], ['OvB', over_type], ['ObB', obese_type]]
-    if (data_type == 3 and sex_type == 2):
+    if (types[data_type] == 3 and sex[sex_type] == 2):
         data = [['NBM', normal_type], [
             'OvBM', over_type], ['ObBM', obese_type]]
-    if (data_type == 3 and sex_type == 3):
+    if (types[data_type] == 3 and sex[sex_type] == 3):
         data = [['NBF', normal_type], [
             'OvBF', over_type], ['ObBF', obese_type]]
-    if (data_type == 4 and sex_type == 1):
+    if (types[data_type] == 4 and sex[sex_type] == 1):
         data = [['NH', normal_type], ['OvH', over_type], ['ObH', obese_type]]
-    if (data_type == 4 and sex_type == 2):
+    if (types[data_type] == 4 and sex[sex_type] == 2):
         data = [['NHM', normal_type], [
             'OvHM', over_type], ['ObHM', obese_type]]
-    if (data_type == 4 and sex_type == 3):
+    if (types[data_type] == 4 and sex[sex_type] == 3):
         data = [['NHF', normal_type], [
             'OvHF', over_type], ['ObHF', obese_type]]
-    if (data_type == 5 and wealth_type == 1):
+    if (types[data_type] == 5 and wealth[wealth_type] == 1):
         data = [['N100', normal_type], [
             'Ov100', over_type], ['Ob100', obese_type]]
-    if (data_type == 5 and wealth_type == 2):
+    if (types[data_type] == 5 and wealth[wealth_type] == 2):
         data = [['N200', normal_type], [
             'Ov200', over_type], ['Ob200', obese_type]]
-    if (data_type == 5 and wealth_type == 3):
+    if (types[data_type] == 5 and wealth[wealth_type] == 3):
         data = [['N300', normal_type], [
             'Ov300', over_type], ['Ob300', obese_type]]
-    if (data_type == 5 and wealth_type == 4):
+    if (types[data_type] == 5 and wealth[wealth_type] == 4):
         data = [['N400', normal_type], [
             'Ov400', over_type], ['Ob400', obese_type]]
-    print(data_type, sex_type, wealth_type)
-    #df = pd.DataFrame([data])
+    df = pd.DataFrame([data])
 
-    # return model.predict(df)
-    return data_type
+    return model.predict(df)
 
 
 st.title('Obesity Rate Predictor')
