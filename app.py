@@ -31,41 +31,40 @@ obese_type = st.slider(
 if st.button('Predict Source Year of Data'):
     year = predict(normal_type=normal_type,
                    over_type=over_type, obese_type=obese_type)
-    st.write(year)
-    if year == 1:
+    if year > 0 and year < 1.5:
         st.success('The data is from year set 1, approximately 1988-1994.')
     else:
-        if year == 2:
-            st.success('The data is from year set 1, approximately 1999-2002.')
+        if year >= 1.5 and year < 2.5:
+            st.success('The data is from year set 2, approximately 1999-2002.')
         else:
-            if year == 3:
+            if year >= 2.5 and year < 3.5:
                 st.success(
-                    'The data is from year set 1, approximately 2001-2004.')
+                    'The data is from year set 3, approximately 2001-2004.')
             else:
-                if year == 4:
+                if year >= 3.5 and year < 4.5:
                     st.success(
-                        'The data is from year set 1, approximately 2003-2006.')
+                        'The data is from year set 4, approximately 2003-2006.')
                 else:
-                    if year == 5:
+                    if year >= 4.5 and year < 5.5:
                         st.success(
                             'The data is from year set 5, approximately 2005 - 2008.')
                     else:
-                        if year == 6:
+                        if year >= 5.5 and year < 6.5:
                             st.success(
-                                'The data is from year set 1, approximately 2007-2010.')
+                                'The data is from year set 6, approximately 2007-2010.')
                         else:
-                            if year == 7:
+                            if year >= 6.5 and year < 7.5:
                                 st.success(
-                                    'The data is from year set 1, approximately 2009-2012.')
+                                    'The data is from year set 7, approximately 2009-2012.')
                             else:
-                                if year == 8:
+                                if year >= 7.5 and year < 8.5:
                                     st.success(
-                                        'The data is from year set 1, approximately 2011-2014.')
+                                        'The data is from year set 8, approximately 2011-2014.')
                                 else:
-                                    if year == 9:
+                                    if year >= 8.5 and year < 9.5:
                                         st.success(
-                                            'The data is from year set 5, approximately 2013 - 2016.')
+                                            'The data is from year set 9, approximately 2013 - 2016.')
                                     else:
-                                        if year == 10:
+                                        if year >= 9.5:
                                             st.success(
-                                                'The data is from year set 5, approximately 2015 - 2018.')
+                                                'The data is from year set 10, approximately 2015 - 2018.')
