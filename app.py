@@ -6,13 +6,10 @@ import datetime
 
 
 model = joblib.load('model-v1.joblib')
-types = ({'GENERAL': 1, 'WHITE': 2, 'BLACK': 3, 'HISPANIC': 4, 'WEALTH': 5})
-sex = ({'GENERAL': 1, 'MALE': 2, 'FEMALE': 3})
-wealth = ({'Under 100%': 1, '200%': 2, '300%': 3, '400%+': 4})
 
 
 @st.cache
-def predict(data_type, sex_type, wealth_type, normal_type, over_type, obese_type):
+def predict(normal_type, over_type, obese_type):
 
     data = [normal_type, over_type, obese_type]
     df = pd.DataFrame([data])
@@ -24,11 +21,6 @@ st.title('Obesity Rate Predictor')
 st.image('https://i.insider.com/57d291cadd0895c6308b46b0?width=700&format=jpeg&auto=webp')
 st.header('Enter the population data:')
 
-data_type = st.selectbox('Subset associated with data:', types)
-sex_type = st.selectbox(
-    'Select between general, male, or female (Doesn\'t Affect Wealth-based stats): ', sex)
-wealth_type = st.selectbox(
-    'Select income in comparison to the poverty level (Only affects wealth-based stats): ', wealth)
 normal_type = st.slider(
     'Percentage of selected population with a normal BMI', 0.0, 100.0, 33.0)
 over_type = st.slider(
