@@ -14,54 +14,7 @@ wealth = ({'Under 100%': 1, '200%': 2, '300%': 3, '400%+': 4})
 @st.cache
 def predict(data_type, sex_type, wealth_type, normal_type, over_type, obese_type):
 
-    if (data_type == 'GENERAL' and sex_type == 'GENERAL'):
-        data = [normal_type, over_type, obese_type, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
-    if (data_type == 'GENERAL' and sex_type == 'MALE'):
-        data = [None, None, None, normal_type, over_type, obese_type, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
-    if (data_type == 'GENERAL' and sex_type == 'FEMALE'):
-        data = [None, None, None, None, None, None, normal_type, over_type, obese_type, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
-    if (data_type == 'WHITE' and sex_type == 'GENERAL'):
-        data = [None, None, None, None, None, None, None, None, None, normal_type, over_type, obese_type, None, None, None, None, None, None, None, None, None, None,
-                None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
-    if (data_type == 'WHITE' and sex_type == 'MALE'):
-        data = [None, None, None, None, None, None, None, None, None, None, None, None, normal_type, over_type, obese_type, None, None, None, None, None, None, None,
-                None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
-    if (data_type == 'WHITE' and sex_type == 'FEMALE'):
-        data = [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, normal_type, over_type, obese_type, None, None, None, None,
-                None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
-    if (data_type == 'BLACK' and sex_type == 'GENERAL'):
-        data = [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, normal_type, over_type, obese_type, None,
-                None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
-    if (data_type == 'BLACK' and sex_type == 'MALE'):
-        data = [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                None, None, normal_type, over_type, obese_type, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
-    if (data_type == 'BLACK' and sex_type == 'FEMALE'):
-        data = [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                None, None, None, None, None, normal_type, over_type, obese_type, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
-    if (data_type == 'HISPANIC' and sex_type == 'GENERAL'):
-        data = [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                None, None, None, None, None, None, None, None, normal_type, over_type, obese_type, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
-    if (data_type == 'HISPANIC' and sex_type == 'MALE'):
-        data = [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                None, None, None, None, None, None, None, None, None, None, None, normal_type, over_type, obese_type, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
-    if (data_type == 'HISPANIC' and sex_type == 'FEMALE'):
-        data = [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                None, None, None, None, None, None, None, None, None, None, None, None, None, None, normal_type, over_type, obese_type, None, None, None, None, None, None, None, None, None, None, None, None]
-    if (data_type == 'WEALTH' and wealth_type == 'Under 100%'):
-        data = [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, normal_type, over_type, obese_type, None, None, None, None, None, None, None, None, None]
-    if (data_type == 'WEALTH' and wealth_type == '200%'):
-        data = [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, normal_type, over_type, obese_type, None, None, None, None, None, None]
-    if (data_type == 'WEALTH' and wealth_type == '300%'):
-        data = [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, normal_type, over_type, obese_type, None, None, None]
-    if (data_type == 'WEALTH' and wealth_type == '400%+'):
-        data = [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, normal_type, over_type, obese_type]
+    data = [normal_type, over_type, obese_type]
     df = pd.DataFrame([data])
 
     return model.predict(df)
