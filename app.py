@@ -29,7 +29,7 @@ obese_type = st.slider(
     'Percentage of selected population with an obese BMI', 0.0, 100.0, 33.0)
 
 if st.button('Predict Source Year of Data'):
-    year = predict(data_type=data_type, sex_type=sex_type, wealth_type=wealth_type, normal_type=normal_type,
+    year = predict(normal_type=normal_type,
                    over_type=over_type, obese_type=obese_type)
     if year == 1:
         st.success('The data is from year set 1, approximately 1988-1994.')
