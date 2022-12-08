@@ -31,6 +31,7 @@ obese_type = st.slider(
 if st.button('Predict Source Year of Data'):
     year = predict(normal_type=normal_type,
                    over_type=over_type, obese_type=obese_type)
+    st.write(year)
     if year == 1:
         st.success('The data is from year set 1, approximately 1988-1994.')
     else:
